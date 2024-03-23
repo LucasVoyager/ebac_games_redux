@@ -17,20 +17,12 @@ export type Game = {
 }
 
 function App() {
-  const [games, setGames] = useState<Game[]>([])
-
-  useEffect(() => {
-    fetch('http://localhost:4000/produtos')
-      .then((res) => res.json())
-      .then((res) => setGames(res))
-  }, [])
-
   return (
     <Provider store={store}>
       <GlobalStyle />
       <div className="container">
         <Header />
-        <Produtos jogos={games} />
+        <Produtos />
       </div>
     </Provider>
   )
